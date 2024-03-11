@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import logger from "../logger/index.logger.js";
+
 
 /**
  * @params {Error} err
@@ -10,9 +9,6 @@ import logger from "../logger/index.logger.js";
  *
  */
 export default (err, _, res, __) => {
-  if (err.httpStatus === 500) logger.error(null, err);
-  if (err.format === "html") {
-    return res.status(err.httpStatus).render("error", { error: err });
-  }
+  if (err.httpStatus === 500) console.error(err);
   return res.status(err.httpStatus).json({ error: err.message });
 };
