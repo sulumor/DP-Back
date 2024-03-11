@@ -1,0 +1,4 @@
+%syntax-version=1.0.0
+%project=DP-Back
+
+init 2024-03-11T14:25:35Z Romuald Patfoort <romuald.patfoort@gmail.com> # initialisation de la BDD
