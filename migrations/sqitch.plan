@@ -2,3 +2,4 @@
 %project=DP-Back
 
 init 2024-03-11T14:25:35Z Romuald Patfoort <romuald.patfoort@gmail.com> # initialisation de la BDD
+crud 2024-03-11T15:52:47Z Romuald Patfoort <romuald.patfoort@gmail.com> # insert and update data in each table
