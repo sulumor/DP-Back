@@ -6,7 +6,7 @@ const dirname = url.fileURLToPath(new URL("..", import.meta.url));
 const options = {
   info: {
     version: "1.0.0",
-    title: "New API",
+    title: "Fact",
     description: "",
   },
 
