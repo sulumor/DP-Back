@@ -1,5 +1,3 @@
-
-
 /**
  * @params {Error} err
  * @params {Express.Request} req
