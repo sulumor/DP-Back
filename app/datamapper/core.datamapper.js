@@ -3,32 +3,12 @@ import client from "../helpers/pg.client.js";
 export default class CoreDatamapper {
   static tableName;
 
-  static async findAll(params) {
-    let filter = "";
-    const values = [];
+  static insertTable;
 
-    if (params?.where) {
-      const filters = [];
-      let indexPlaceholder = 1;
+  static updateTable;
 
-      Object.entries(params.where).forEach(([param, value]) => {
-        if (param === "or") {
-          const filtersOr = [];
-          Object.entries(value).forEach(([key, val]) => {
-            filtersOr.push(`"${key}" = $${indexPlaceholder}`);
-            values.push(val);
-            indexPlaceholder += 1;
-          });
-          filters.push(`(${filtersOr.join(" OR ")})`);
-        } else {
-          filters.push(`"${param}" = $${indexPlaceholder}`);
-          values.push(value);
-          indexPlaceholder += 1;
-        }
-      });
-      filter = `WHERE ${filters.join(" AND ")}`;
-    }
-    const result = await client.query(`SELECT * FROM "${this.tableName}" ${filter}`, [values]);
+  static async findAll() {
+    const result = await client.query(`SELECT * FROM "${this.tableName}"`);
     return result.rows;
   }
 
@@ -38,28 +18,12 @@ export default class CoreDatamapper {
   }
 
   static async insert(data) {
-    const fields = Object.keys(data);
-    const values = Object.values(data);
-    const placeholders = fields.map((_, index) => `$${index + 1}`);
-    const result = await client.query(`
-      INSERT INTO "${this.tableName}"
-        (${fields}) VALUES (${placeholders})
-        RETURNING *
-    `, values);
+    const result = await client.query(`SELECT * FROM ${this.insertTable}($1)`, [data]);
     return result.rows[0];
   }
 
-  static async update(id, data) {
-    const fields = Object.keys(data);
-    const values = Object.values(data);
-    const placeholderFields = fields.map((field, index) => `"${field}" = $${index + 1}`);
-    const result = await client.query(`
-      UPDATE "${this.tableName}"
-      SET ${placeholderFields},
-      // "update_at"= now()
-      WHERE id = $${fields.lenght + 1}
-      RETURNING *
-    `, [...values, id]);
+  static async update(data) {
+    const result = await client.query(`SELECT * FROM ${this.updateTable}($1)`, [data]);
     return result.rows[0];
   }
 
