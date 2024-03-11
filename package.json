@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "npx nodemon",
-    "start": "node ."
+    "start": "node .",
+    "db:reset": "sqitch revert -y; sqitch deploy; psql fact -f data/seeding.sql"
   },
   "keywords": [
     "template",
