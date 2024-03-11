@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "npx nodemon",
     "start": "node .",
+    "lint": "eslint --fix .",
     "db:reset": "sqitch revert -y; sqitch deploy; psql fact -f data/seeding.sql"
   },
   "keywords": [
