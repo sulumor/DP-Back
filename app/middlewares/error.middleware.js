@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * @params {Error} err
  * @params {Express.Request} req
