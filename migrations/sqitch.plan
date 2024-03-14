@@ -3,3 +3,5 @@
 
 init 2024-03-11T14:25:35Z Romuald Patfoort <romuald.patfoort@gmail.com> # initialisation de la BDD
 crud 2024-03-11T15:52:47Z Romuald Patfoort <romuald.patfoort@gmail.com> # insert and update data in each table
+invoice_details 2024-03-14T14:24:36Z Romuald Patfoort <romuald.patfoort@gmail.com> # get the details of invoice
+add_invoice 2024-03-14T14:52:37Z Romuald Patfoort <romuald.patfoort@gmail.com> # add a new  invoice
