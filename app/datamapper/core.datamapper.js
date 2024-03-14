@@ -17,6 +17,35 @@ export default class CoreDatamapper {
     return result.rows[0];
   }
 
+  static async findByParams(params) {
+    let filter = "";
+    const values = [];
+
+    if (params.where) {
+      const filters = [];
+      let indexPlaceholder = 1;
+
+      Object.entries(params.where).forEach(([param, value]) => {
+        if (param === "or") {
+          const filtersOr = [];
+          Object.entries(value).forEach(([key, val]) => {
+            filtersOr.push(`"${key}" = $${indexPlaceholder}`);
+            values.push(val);
+            indexPlaceholder += 1;
+          });
+          filters.push(`(${filtersOr.join(" OR ")})`);
+        } else {
+          filters.push(`"${param}" = $${indexPlaceholder}`);
+          values.push(value);
+          indexPlaceholder += 1;
+        }
+      });
+      filter = `WHERE ${filters.join(" AND ")}`;
+    }
+    const result = await client.query(`SELECT * FROM "${this.tableName}" ${filter}`, values);
+    return result.rows;
+  }
+
   static async insert(data) {
     const result = await client.query(`SELECT * FROM ${this.insertTable}($1)`, [data]);
     return result.rows[0];
