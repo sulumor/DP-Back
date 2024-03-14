@@ -44,7 +44,7 @@ invoiceRouter.route("/:id(\\d+)")
  * @summary Delete a invoice
  * @tags Invoice
  * @param { number } id.path.required - Invoice's id
- * @return {} 204 - Success response
+ * @return { object } 204 - Success response
  * @return { ApiJsonError } 400 - Bad request response - application/json
  * @return { ApiJsonError } 404 - Not found response - application/json
  * @return { ApiJsonError } 500 - Internal Server Error response - application/json
@@ -63,7 +63,7 @@ invoiceRouter.route("/")
  * @return { ApiJsonError } 500 - Internal Server Error response - application/json
  */
   .get(
-    controllerWrapper(InvoiceController.getAll.bind(InvoiceController)),
+    controllerWrapper(InvoiceController.getInvoiceDetails.bind(InvoiceController)),
   )
 
   /**

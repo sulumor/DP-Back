@@ -1,3 +1,38 @@
 @endpoint=http://localhost:{{$dotenv PORT}}
 
-GET {{ endpoint }}/api/visitor
+GET {{ endpoint }}/api/vfdfdf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik51bcOpcm9iaXMiLCJlbWFpbCI6Im51bWVyb0BiaXMuZWciLCJpYXQiOjE3MTA0NDYyMDIsImV4cCI6MTcxMDQ0NjIyMn0.vIZZjCOaqpqoijG_FDeXGFBxLzYyXN0QmrNk0igUDWI
+
+###
+POST {{endpoint}}/login
+Content-Type: application/json
+
+{
+  "email": "numero@bis.eg",
+  "password": "Test123!"  
+}
+
+### 
+GET {{endpoint}}/refresh_token
+
+### 
+DELETE {{endpoint}}/refresh_token
+
+###
+POST {{endpoint}}/api/invoices
+Content-Type: application/json
+
+{
+  "issued_at": "2022-04-13 10:00:00+02", 
+  "visitor_id": 1, 
+  "products": [
+    {
+        "id": 1,
+        "quantity": 5
+    },
+    {
+        "id": 2,
+        "quantity": 3
+    }
+  ] 
+}

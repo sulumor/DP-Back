@@ -28,7 +28,7 @@ visitorRouter.route("/:id(\\d+)")
  * @summary Update a visitor
  * @tags Visitor
  * @param { number } id.path.required - Visitor's id
- * @param { VisitorUpdate} request.body.required - Visitor's info
+ * @param { VisitorUpdate } request.body.required - Visitor's info
  * @return { Visitor } 200 - Success response - application/json
  * @return { ApiJsonError } 400 - Bad request response - application/json
  * @return { ApiJsonError } 404 - Not found response - application/json
@@ -44,7 +44,7 @@ visitorRouter.route("/:id(\\d+)")
  * @summary Delete a visitor
  * @tags Visitor
  * @param { number } id.path.required - Visitor's id
- * @return {} 204 - Success response
+ * @return { object } 204 - Success response
  * @return { ApiJsonError } 400 - Bad request response - application/json
  * @return { ApiJsonError } 404 - Not found response - application/json
  * @return { ApiJsonError } 500 - Internal Server Error response - application/json

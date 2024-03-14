@@ -28,7 +28,7 @@ productRouter.route("/:id(\\d+)")
  * @summary Update a product
  * @tags Product
  * @param { number } id.path.required - product's id
- * @param { ProductUpdate} request.body.required - product's info
+ * @param { ProductUpdate } request.body.required - product's info
  * @return { Product } 200 - Success response - application/json
  * @return { ApiJsonError } 400 - Bad request response - application/json
  * @return { ApiJsonError } 404 - Not found response - application/json
@@ -44,7 +44,7 @@ productRouter.route("/:id(\\d+)")
  * @summary Delete a product
  * @tags Product
  * @param { number } id.path.required - product's id
- * @return {} 204 - Success response
+ * @return { object } 204 - Success response
  * @return { ApiJsonError } 400 - Bad request response - application/json
  * @return { ApiJsonError } 404 - Not found response - application/json
  * @return { ApiJsonError } 500 - Internal Server Error response - application/json

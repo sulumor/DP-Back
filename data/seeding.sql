@@ -3,7 +3,7 @@ BEGIN;
 TRUNCATE visitor, product, invoice, invoice_line RESTART IDENTITY;
 
 INSERT INTO visitor(email, password, name, address, zip_code, city) VALUES
-('numero@bis.eg', '$2b$10$Btz1P5F51OMGfvuuL1wh7.kdwyEYXdzCSGpbLg1BAlx91GvwFGlXm', 'Numérobis', 'Dernière pyramide à gauche', '12345', 'Le Caire'),
+('numero@bis.eg', '$2b$12$oJ.ZrdSyHB5bE59Z9.JDJuDTQ7pHJFgn7wNVMoiwRFvsu21ejvJJm', 'Numérobis', 'Dernière pyramide à gauche', '12345', 'Le Caire'),
 ('amon@bofis.eg', '$2b$10$XBG4JD2apNQs1S97bXlL/.7jd95ylW6h4ZFnP1dAE10RaqsaSd8De', 'Amonbofis', 'Première pyramide à droite', '54321', 'Le Caire'),
 ('pano@ramix.ga', '$2b$10$g8NKBH9OrxoUt.2jMJ.V3eyH7lN6EbVk7THcG3bAsUCtd.iKuqtnK', 'Panoramix', 'Grande hutte à la sortie du village', '98765', 'Village des irréductibles');
 
