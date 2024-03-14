@@ -10,7 +10,7 @@ const invoiceLineRouter = Router();
 
 invoiceLineRouter.route("/:id(\\d+)")
 /**
- * GET /api/invoice_line/:id
+ * GET /api/invoice_lines/:id
  * @summary Get a invoice_line from its id
  * @tags InvoiceLine
  * @param { number } id.path.required - InvoiceLine's id
@@ -24,7 +24,7 @@ invoiceLineRouter.route("/:id(\\d+)")
   )
 
   /**
-   * PATCH /api/invoice_line/:id
+   * PATCH /api/invoice_lines/:id
  * @summary Update a invoice_line
  * @tags InvoiceLine
  * @param { number } id.path.required - InvoiceLine's id
@@ -40,7 +40,7 @@ invoiceLineRouter.route("/:id(\\d+)")
   )
 
 /**
- * DELETE /api/invoice_line/:id
+ * DELETE /api/invoice_lines/:id
  * @summary Delete a invoice_line
  * @tags InvoiceLine
  * @param { number } id.path.required - InvoiceLine's id
@@ -55,7 +55,7 @@ invoiceLineRouter.route("/:id(\\d+)")
 
 invoiceLineRouter.route("/")
 /**
- * GET /api/invoice_line
+ * GET /api/invoice_lines
  * @summary Get all invoice_lines
  * @tags InvoiceLine
  * @return  { InvoiceLine[] } 200 - Success response - application/json
@@ -67,7 +67,7 @@ invoiceLineRouter.route("/")
   )
 
   /**
-   * POST /api/invoice_line
+   * POST /api/invoice_lines
    * @summary Add a invoice_line
    * @tags InvoiceLine
    * @param { InvoiceLineCreate } request.body.required - InvoiceLine's info

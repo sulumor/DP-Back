@@ -10,7 +10,7 @@ const productRouter = Router();
 
 productRouter.route("/:id(\\d+)")
 /**
- * GET /api/product/:id
+ * GET /api/products/:id
  * @summary Get a product from its id
  * @tags Product
  * @param { number } id.path.required - product's id
@@ -24,7 +24,7 @@ productRouter.route("/:id(\\d+)")
   )
 
   /**
-   * PATCH /api/product/:id
+   * PATCH /api/products/:id
  * @summary Update a product
  * @tags Product
  * @param { number } id.path.required - product's id
@@ -40,7 +40,7 @@ productRouter.route("/:id(\\d+)")
   )
 
 /**
- * DELETE /api/product/:id
+ * DELETE /api/products/:id
  * @summary Delete a product
  * @tags Product
  * @param { number } id.path.required - product's id
@@ -55,7 +55,7 @@ productRouter.route("/:id(\\d+)")
 
 productRouter.route("/")
 /**
- * GET /api/product
+ * GET /api/products
  * @summary Get all products
  * @tags Product
  * @return  { Product[] } 200 - Success response - application/json
@@ -67,7 +67,7 @@ productRouter.route("/")
   )
 
   /**
-   * POST /api/product
+   * POST /api/products
    * @summary Add a product
    * @tags Product
    * @param { ProductCreate } request.body.required - product's info

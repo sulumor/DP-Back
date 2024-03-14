@@ -10,7 +10,7 @@ const invoiceRouter = Router();
 
 invoiceRouter.route("/:id(\\d+)")
 /**
- * GET /api/invoice/:id
+ * GET /api/invoices/:id
  * @summary Get a invoice from its id
  * @tags Invoice
  * @param { number } id.path.required - Invoice's id
@@ -24,7 +24,7 @@ invoiceRouter.route("/:id(\\d+)")
   )
 
   /**
-   * PATCH /api/invoice/:id
+   * PATCH /api/invoices/:id
  * @summary Update a invoice
  * @tags Invoice
  * @param { number } id.path.required - Invoice's id
@@ -40,7 +40,7 @@ invoiceRouter.route("/:id(\\d+)")
   )
 
 /**
- * DELETE /api/invoice/:id
+ * DELETE /api/invoices/:id
  * @summary Delete a invoice
  * @tags Invoice
  * @param { number } id.path.required - Invoice's id
@@ -55,7 +55,7 @@ invoiceRouter.route("/:id(\\d+)")
 
 invoiceRouter.route("/")
 /**
- * GET /api/invoice
+ * GET /api/invoices
  * @summary Get all invoices
  * @tags Invoice
  * @return  { Invoice[] } 200 - Success response - application/json
@@ -67,7 +67,7 @@ invoiceRouter.route("/")
   )
 
   /**
-   * POST /api/invoice
+   * POST /api/invoices
    * @summary Add a invoice
    * @tags Invoice
    * @param { InvoiceCreate } request.body.required - Invoice's info

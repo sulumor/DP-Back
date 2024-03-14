@@ -10,7 +10,7 @@ const visitorRouter = Router();
 
 visitorRouter.route("/:id(\\d+)")
 /**
- * GET /api/visitor/:id
+ * GET /api/visitors/:id
  * @summary Get a visitor from its id
  * @tags Visitor
  * @param { number } id.path.required - Visitor's id
@@ -24,7 +24,7 @@ visitorRouter.route("/:id(\\d+)")
   )
 
   /**
-   * PATCH /api/visitor/:id
+   * PATCH /api/visitors/:id
  * @summary Update a visitor
  * @tags Visitor
  * @param { number } id.path.required - Visitor's id
@@ -40,7 +40,7 @@ visitorRouter.route("/:id(\\d+)")
   )
 
 /**
- * DELETE /api/visitor/:id
+ * DELETE /api/visitors/:id
  * @summary Delete a visitor
  * @tags Visitor
  * @param { number } id.path.required - Visitor's id
@@ -55,7 +55,7 @@ visitorRouter.route("/:id(\\d+)")
 
 visitorRouter.route("/")
 /**
- * GET /api/visitor
+ * GET /api/visitors
  * @summary Get all visitors
  * @tags Visitor
  * @return  { Visitor[] } 200 - Success response - application/json
@@ -67,7 +67,7 @@ visitorRouter.route("/")
   )
 
   /**
-   * POST /api/visitor
+   * POST /api/visitors
    * @summary Add a visitor
    * @tags Visitor
    * @param { VisitorCreate } request.body.required - Visitor's info

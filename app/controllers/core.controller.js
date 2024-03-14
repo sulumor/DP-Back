@@ -1,8 +1,9 @@
 export default class CoreController {
   static datamapper;
 
-  static async getAll(_, res) {
+  static async getAll(_, res, next) {
     const rows = await this.datamapper.findAll();
+    if (!rows) return next();
     return res.status(200).json(rows);
   }
 
@@ -13,8 +14,9 @@ export default class CoreController {
     return res.status(200).json(row);
   }
 
-  static async create({ body }, res) {
+  static async create({ body }, res, next) {
     const row = await this.datamapper.insert(body);
+    if (!row) return next();
     return res.status(200).json(row);
   }
 
