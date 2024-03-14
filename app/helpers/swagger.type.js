@@ -110,3 +110,16 @@
  * @property { number } invoice_id - Id de la facture
  * @property { number } product_id - Id du produit
  */
+
+// Tokens
+
+/**
+ * @typedef { object } Tokens
+ * @property { string } accessToken - Token d'accès à l'Api
+ * @property { string } refreshToken - Token pour refaire un access token
+ */
+
+/**
+ * @typedef { object } Message
+ * @property { string } message - Messsage
+ */
