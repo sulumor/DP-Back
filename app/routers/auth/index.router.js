@@ -1,6 +1,8 @@
 import { Router } from "express";
 import AuthController from "../../controllers/auth.controller.js";
 import controllerWrapper from "../../helpers/controller.wrapper.js";
+import validateMiddleware from "../../middlewares/validation.middleware.js";
+import postSchema from "../../schemas/authentification/post.schema.js";
 
 const authRouter = Router();
 
@@ -8,12 +10,14 @@ const authRouter = Router();
  * POST /login
  * @summary Login to the api
  * @tags Authentification
+ * @param { LoginBody } request.body.required - Login info
  * @return  { Tokens } 200 - Success response - application/json
  * @return { ApiJsonError } 401 - Authentification failed response - application/json
  * @return { ApiJsonError } 500 - Internal Server Error response - application/json
  */
 authRouter.post(
   "/login",
+  validateMiddleware("body", postSchema),
   controllerWrapper(AuthController.login.bind(AuthController)),
 );
 

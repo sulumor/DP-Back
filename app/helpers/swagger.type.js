@@ -123,3 +123,11 @@
  * @typedef { object } Message
  * @property { string } message - Messsage
  */
+
+// LOGIN
+
+/**
+ * @typedef { object } LoginBody
+ * @property { string } email - Email
+ * @property { string } password - Mot de passe
+ */
