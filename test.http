@@ -1,7 +1,7 @@
 @endpoint=http://localhost:{{$dotenv PORT}}
 
-GET {{ endpoint }}/api/vfdfdf
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik51bcOpcm9iaXMiLCJlbWFpbCI6Im51bWVyb0BiaXMuZWciLCJpYXQiOjE3MTA0NDYyMDIsImV4cCI6MTcxMDQ0NjIyMn0.vIZZjCOaqpqoijG_FDeXGFBxLzYyXN0QmrNk0igUDWI
+GET {{ endpoint }}/api/products/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik51bcOpcm9iaXMiLCJlbWFpbCI6Im51bWVyb0BiaXMuZWciLCJpYXQiOjE3MTA3NTI0MzksImV4cCI6MTcxMDc1MjQ1OX0.xKz1wgDyMQxaZbQxiR8C7VOGoNkEQ8S_YkoZSVxHpUk
 
 ###
 POST {{endpoint}}/login
