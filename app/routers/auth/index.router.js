@@ -3,6 +3,7 @@ import AuthController from "../../controllers/auth.controller.js";
 import controllerWrapper from "../../helpers/controller.wrapper.js";
 import validateMiddleware from "../../middlewares/validation.middleware.js";
 import postSchema from "../../schemas/authentification/post.schema.js";
+import Limiter from "../../helpers/rateLimiter.config.js";
 
 const authRouter = Router();
 
@@ -17,6 +18,7 @@ const authRouter = Router();
  */
 authRouter.post(
   "/login",
+  Limiter.accountLogin,
   validateMiddleware("body", postSchema),
   controllerWrapper(AuthController.login.bind(AuthController)),
 );
